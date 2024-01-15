@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+        let length = +prompt("Nhập vào chiều dài của hình chữ nhật:");
+        let width = +prompt("Nhập vào chiều rộng của hình chữ nhật:");
+        // Hàm tìm số hình vuông tối thiểu có thể cắt từ hình chữ nhật
+        function findMinSquares(length, width) {
+            let count = 0;
+
+            // Thực hiện việc cắt hình vuông cho đến khi chiều dài và chiều rộng cùng bằng 0
+            while (length > 0 && width > 0) {
+                // Nếu chiều dài lớn hơn hoặc bằng chiều rộng, cắt hình vuông với cạnh bằng chiều rộng
+                if (length >= width) {
+                    count += Math.floor(length / width);
+                    length %= width;
+                }
+                // Ngược lại, cắt hình vuông với cạnh bằng chiều dài
+                else {
+                    count += Math.floor(width / length);
+                    width %= length;
+                }
+            }
+
+            return count;
+        }
+
+        // Tìm số hình vuông tối thiểu và in kết quả
+        let minSquares = findMinSquares(length, width);
+        console.log(`Số hình vuông tối thiểu có thể cắt từ hình chữ nhật: ${minSquares}`);
+</script>
+</html>

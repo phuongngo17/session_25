@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+        let a = +prompt("Nhập số nguyên dương a:");
+        let b = +prompt("Nhập số nguyên dương b:");
+
+        let start = Math.min(a, b);
+        let end = Math.max(a, b);
+        let sumEven = 0;
+        let sumOdd = 0;
+
+        // Tính tổng của tất cả các số lẻ và chẵn nằm giữa a và b
+        for (let i = start + 1; i < end; i++) {
+            if (i % 2 === 0) {
+                sumEven += i;
+            } else {
+                sumOdd += i;
+            }
+        }
+
+        console.log(`Tổng các số chẵn: ${sumEven}`);
+        console.log(`Tổng các số lẻ: ${sumOdd}`);
+</script>
+</html>

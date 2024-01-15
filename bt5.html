@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+        let n = +prompt("Nhập vào số nguyên n:");
+        let count = 0;
+        let digit;
+        while (n !== 0) {
+            // Lấy chữ số cuối cùng của n
+            digit = n % 10;
+            // Kiểm tra nếu chữ số là chẵn
+            if (digit % 2 === 0) {
+                count++;
+            }
+            // Loại bỏ chữ số cuối cùng của n
+            n = Math.floor(n / 10);
+        }
+        console.log(`Số lượng chữ số chẵn trong n: ${count}`);
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+        let a = +prompt("Nhập số nguyên a:");
+        let b = +prompt("Nhập số nguyên b:");
+        let c =+prompt("Nhập số nguyên c:");
+        let d = +prompt("Nhập số nguyên d:");
+
+        // Hàm tìm ước chung lớn nhất của hai số
+        function findGCD(x, y) {
+            if (y === 0) {
+                return x;
+            } else {
+                return findGCD(y, x % y);
+            }
+        }
+
+        // Hàm tìm bội chung nhỏ nhất của 4 số
+        function findLCM(a, b, c, d) {
+            let gcdAB = findGCD(a, b);
+            let gcdCD = findGCD(c, d);
+            let gcdABCD = findGCD(gcdAB, gcdCD);
+
+            let lcmAB = (a * b) / gcdAB;
+            let lcmCD = (c * d) / gcdCD;
+            let lcm = (lcmAB * lcmCD) / gcdABCD;
+
+            return lcm;
+        }
+
+        // Tìm bội chung nhỏ nhất của 4 số và in kết quả
+        let lcm = findLCM(a, b, c, d);
+        console.log(`Bội chung nhỏ nhất của ${a}, ${b}, ${c}, ${d}: ${lcm}`);
+</script>
+</html>
